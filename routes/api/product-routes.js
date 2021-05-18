@@ -106,16 +106,17 @@ router.put("/:id", (req, res) => {
 });
 
 router.delete("/:id", (req, res) => {
-console.log(req.params)
-Product.destroy({
-  where: {
-      id: req.params.id
-  }
-}).then((data) => res.json(data))
-.catch((err) => {
-  // console.log(err);
-  res.status(400).json(err);
-});
+  console.log(req.params);
+  Product.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((data) => res.json(data))
+    .catch((err) => {
+      // console.log(err);
+      res.status(400).json(err);
+    });
   // delete one product by its `id` value
 });
 
